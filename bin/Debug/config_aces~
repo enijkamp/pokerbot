@@ -1,0 +1,9 @@
+name = acesbang
+vm = Poker Niklas
+vmWidth = 1024
+user = erik
+password = nijkamp123
+taskbarColors = Yellow,Red,Green,Blue,White
+closeIfReachedMoneyMin = 1.0
+closeIfReachedMoneyMax = 3.0
+stakes = 1/2

@@ -1,0 +1,10 @@
+name = LuckStar99
+vm = Poker Birgit
+vmWidth = 1024
+vmHeight = 750
+user = erik2
+password = nijkamp123
+taskbarColors = Yellow,Red,Green,Blue,White
+closeIfReachedMoneyMin = 1.0
+closeIfReachedMoneyMax = 3.0
+stakes = 1/2

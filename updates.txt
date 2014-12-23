@@ -1,0 +1,32 @@
+14/09/09
+- maxtime
+- minimize lobby
+- reduced 7 to 6 players table opening (better pot sizes)
+
+13/09/09
+- tische öffnen nach "I'm back" suchen
+- tische öffnen maus schneller
+- nach "I'm back" und "you have been removed" suchen
+- mehr tische scannen
+
+10/09/09
+- lobby "identified 0 tables" fix
+- auto-start thread + stop möglichkeit
+- logging info reduziert
+- doppelte tabs nach PS neustart fix
+- auto-start mit eigenen thread unabhängig von UI und stop-bar
+- alivekeeper -> auf blind warten anstatt pokerstars einfach schließen
+
+09/09/09
+- sitout mit "wait for big blind" ersetzt
+- auch bei locate tables nach offenen tischen suche (fold & check)
+- bei sit-in auch check prüfen, nicht nur fold
+- table locate wenn kein tisch gefunden wurde -> full screen scan
+- maus geschwindigkeit höher
+- "I'm back" / "Post BB" button check und fenster schließen
+- alivekeeper stop
+
+08/09/09
+- login und server php code
+- "." und "," double.parse korrektur für deutsche systeme
+- minimum tables check

@@ -1,0 +1,4 @@
+- short mouse trails
+- multi-tables single click
+- xp effekte deaktivieren
+- slow pc or xp host -> no mouse trail + dbl-click speed slow + fast pointer

@@ -1,0 +1,17 @@
+- sit-in table schließen funktioniert nicht
+- auto post blinds geht manhcmal nicht
+- atuo stop geht nicht?
+- Uhrzeit start
+- random zeit auf replace tables + autostop
+
+
+ok
+- maus mehrere vbox api aufrufe pro timer callback -> schnellere maus
+- tische schließen rechtsklick geht nicht -> gefixed?
+- tische immer mit letzte taskbar position + right click + c schließen
+
+- replace tables tische schneller schließen, sitout next hand, nicht lange auf blind warten -> alivekeeper 3 mins
+- rendering + tab-switch option zur deaktivierung 
+- bei seat-player, maus nach buy-in zu sit-out/auto-post bewegen, direkt scannen in schleife und klicken, nicht rumgehopse
+
+- Langsame cpu -> human mouse -> 3 steps raus

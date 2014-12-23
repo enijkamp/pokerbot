@@ -1,0 +1,660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F45D5576-1F97-4A1C-BD9A-BE6800E1CFF8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PokerBot</RootNamespace>
+    <AssemblyName>PokerBot</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>PokerBot.App.Gui.BotApp</StartupObject>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Speech">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="app\common\AliveKeeper.cs" />
+    <Compile Include="app\common\BotAppLogic.cs" />
+    <Compile Include="app\common\ImageRenderer.cs" />
+    <Compile Include="app\common\ImageRendererControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="app\common\ImageRendererForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app\common\Security.cs" />
+    <Compile Include="app\common\Settings.cs" />
+    <Compile Include="app\common\TableContainer.cs" />
+    <Compile Include="app\common\TableOpener.cs" />
+    <Compile Include="app\common\TableRenderer.cs" />
+    <Compile Include="app\common\TableRendererBase.cs" />
+    <Compile Include="app\common\TableRendererControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="app\common\TableRendererForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app\gui\BotApp.cs" />
+    <Compile Include="app\gui\BotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app\gui\BotForm.Designer.cs">
+      <DependentUpon>BotForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="app\simple\BotApp.cs" />
+    <Compile Include="app\test\TestTableOpener.cs" />
+    <Compile Include="app\test\TestStuff.cs" />
+    <Compile Include="common\AssemblyTools.cs" />
+    <Compile Include="common\ErrorHandler.cs" />
+    <Compile Include="common\Log.cs" />
+    <Compile Include="common\ImageTools.cs" />
+    <Compile Include="common\TextTools.cs" />
+    <Compile Include="common\TestBase.cs" />
+    <Compile Include="common\TextToSpeech.cs" />
+    <Compile Include="compiler\TestCompiler.cs" />
+    <Compile Include="control\controller\AccurateTimer.cs" />
+    <Compile Include="control\controller\HumanMouse.cs" />
+    <Compile Include="control\controller\Keyboard.cs" />
+    <Compile Include="control\controller\Controller.cs" />
+    <Compile Include="control\controller\HumanMouseSpinWait.cs" />
+    <Compile Include="control\controller\BeamMouse.cs" />
+    <Compile Include="control\controller\Mouse.cs" />
+    <Compile Include="control\controller\RandomClicker.cs" />
+    <Compile Include="control\test\TestRandomClicker.cs" />
+    <Compile Include="control\test\TestMouse.cs" />
+    <Compile Include="control\test\TestSendKeys.cs" />
+    <Compile Include="control\emulate\MouseRecorder.cs" />
+    <Compile Include="control\emulate\Replay.cs" />
+    <Compile Include="control\hook\TestHook.cs" />
+    <Compile Include="control\replays\ReplayBubbles.cs" />
+    <Compile Include="control\replays\ReplayCircle.cs" />
+    <Compile Include="control\emulate\Replayer.cs" />
+    <Compile Include="control\replays\ReplayEight.cs" />
+    <Compile Include="control\replays\ReplayFish.cs" />
+    <Compile Include="control\replays\ReplayFive.cs" />
+    <Compile Include="control\replays\ReplayHorizontal.cs" />
+    <Compile Include="control\replays\ReplayHouse.cs" />
+    <Compile Include="control\replays\ReplayTriangle.cs" />
+    <Compile Include="control\test\TestReplay.cs" />
+    <Compile Include="control\replays\ReplayWave.cs" />
+    <Compile Include="control\replays\ReplayZickZack.cs" />
+    <Compile Include="decide\test\TestSituation.cs" />
+    <Compile Include="devices\test\TestVirtualBox.cs" />
+    <Compile Include="devices\test\TestDeviceControl.cs" />
+    <Compile Include="devices\control\Win32Control.cs" />
+    <Compile Include="devices\control\DeviceControl.cs" />
+    <Compile Include="devices\control\VirtualBoxControl.cs" />
+    <Compile Include="decide\evaluator\BasicEvaluator.cs" />
+    <Compile Include="decide\evaluator\HandAnalysis.cs" />
+    <Compile Include="decide\evaluator\HandEvaluator.cs" />
+    <Compile Include="decide\evaluator\SituationEvaluator.cs" />
+    <Compile Include="decide\evaluator\SmartEvaluator.cs" />
+    <Compile Include="decide\rules\RuleEvaluator.cs" />
+    <Compile Include="decide\rules\RuleInterpreter.cs" />
+    <Compile Include="decide\rules\RulesReader.cs" />
+    <Compile Include="decide\spreadsheet\CodeLib\Algorithm.cs" />
+    <Compile Include="decide\spreadsheet\CodeLib\BinaryTree\BinarySearchTreeBase\BinarySearchTreeBase.cs" />
+    <Compile Include="decide\spreadsheet\CodeLib\BinaryTree\BinarySearchTreeBase\BinaryTreeNodeBase.cs" />
+    <Compile Include="decide\spreadsheet\CodeLib\BinaryTree\RedBlackTree\RedBlackTree.cs" />
+    <Compile Include="decide\spreadsheet\CodeLib\BinaryTree\RedBlackTree\RedBlackTreeNode.cs" />
+    <Compile Include="decide\spreadsheet\CodeLib\Encoder\Bin2Hex.cs" />
+    <Compile Include="decide\spreadsheet\CodeLib\FastSearchList.cs" />
+    <Compile Include="decide\spreadsheet\CodeLib\FileIO.cs" />
+    <Compile Include="decide\spreadsheet\CodeLib\FileSelector.cs" />
+    <Compile Include="decide\spreadsheet\CodeLib\Pair.cs" />
+    <Compile Include="decide\spreadsheet\CodeLib\StreamHelper.cs" />
+    <Compile Include="decide\spreadsheet\CodeLib\TextEncoding.cs" />
+    <Compile Include="decide\spreadsheet\Office\CompoundDocumentFormat\ByteOrderMarks.cs" />
+    <Compile Include="decide\spreadsheet\Office\CompoundDocumentFormat\CompoundDocument.cs" />
+    <Compile Include="decide\spreadsheet\Office\CompoundDocumentFormat\CompoundDocument_Read.cs" />
+    <Compile Include="decide\spreadsheet\Office\CompoundDocumentFormat\CompoundDocument_Write.cs" />
+    <Compile Include="decide\spreadsheet\Office\CompoundDocumentFormat\CompoundFileHeader.cs" />
+    <Compile Include="decide\spreadsheet\Office\CompoundDocumentFormat\DirectoryEntry.cs" />
+    <Compile Include="decide\spreadsheet\Office\CompoundDocumentFormat\DirectoryTree.cs" />
+    <Compile Include="decide\spreadsheet\Office\CompoundDocumentFormat\EntryType.cs" />
+    <Compile Include="decide\spreadsheet\Office\CompoundDocumentFormat\FileHeader.cs" />
+    <Compile Include="decide\spreadsheet\Office\CompoundDocumentFormat\MasterSectorAllocation.cs" />
+    <Compile Include="decide\spreadsheet\Office\CompoundDocumentFormat\NodeColor.cs" />
+    <Compile Include="decide\spreadsheet\Office\CompoundDocumentFormat\SectorAllocation.cs" />
+    <Compile Include="decide\spreadsheet\Office\CompoundDocumentFormat\ShortSectorAllocation.cs" />
+    <Compile Include="decide\spreadsheet\Office\CompoundDocumentFormat\SID.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\Enums\BlipSignature.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\Enums\BlipType.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\Enums\EscherRecordType.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\Enums\PropertyIDs.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\Enums\ShapeFlag.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\Enums\ShapeType.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecord.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\EscherRecord.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtAlignRule.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtAnchor.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtArcRule.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtBlip.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtBlipBitmapDIB.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtBlipBitmapJPEG.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtBlipBitmapPNG.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtBlipEnd.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtBlipMetafileEMF.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtBlipMetafilePICT.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtBlipMetafileWMF.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtBlipStart.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtBSE.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtBstoreContainer.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtCalloutRule.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtChildAnchor.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtClientAnchor.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtClientData.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtClientRule.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtClientTextbox.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtCLSID.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtColorMRU.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtColorScheme.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtConnectorRule.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtContainer.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtDeletedPspl.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtDg.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtDgContainer.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtDgg.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtDggContainer.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtOleObject.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtOPT.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtRegroupItems.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtSelection.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtSolverContainer.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtSp.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtSpContainer.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtSpgr.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtSpgrContainer.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtSplitMenuColors.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\EscherRecords\MsofbtTextbox.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\Extended\MsofbtBSE.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\Extended\MsofbtContainer.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\Extended\MsofbtDgg.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\Extended\MsofbtDggContainer.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\Extended\MsofbtOPT.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\Extended\MsofbtSp.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryDrawingFormat\ShapeProperty.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\CellFormatCollection.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\ColorPalette.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Decode\StringDecoder.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Decode\WorkbookDecoder.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Decode\WorksheetDecoder.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Encode\WorkbookEncoder.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Encode\WorkSheetEncoder.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Enums\ErrorCode.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Enums\RecordType.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Enums\StreamType.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Enums\SubRecordType.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Extended\BOOLERR.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Extended\EXTSST.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Extended\FORMULA.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Extended\MSOCONTAINER.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Extended\MULRK.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Extended\OBJ.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Extended\PALETTE.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Extended\SST.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Extended\StringOffset.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Extended\XF.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Record.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\ARRAY.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\BACKUP.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\BITMAP.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\BLANK.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\BOF.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\BOOKBOOL.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\BOOLERR.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\BOTTOMMARGIN.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\BOUNDSHEET.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\CALCCOUNT.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\CALCMODE.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\CellValue.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\CODEPAGE.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\COLINFO.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\CONTINUE.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\DATEMODE.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\DBCELL.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\DEFCOLWIDTH.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\DIMENSIONS.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\EOF.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\EXTSST.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\FONT.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\FORMAT.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\FORMULA.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\LABELSST.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\MSOCONTAINER.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\MSODRAWING.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\MSODRAWINGGROUP.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\MSODRAWINGSELECTION.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\MULBLANK.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\MULRK.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\NUMBER.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\OBJ.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\PALETTE.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\Record.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\RK.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\ROW.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\RSTRING.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\SST.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\STANDARDWIDTH.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\STRING.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\WINDOW1.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\Records\XF.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\RichTextFormat.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\SharedResource.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\SubRecord.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\SubRecords\ClipboardFormat.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\SubRecords\CommonObjectData.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\SubRecords\End.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\SubRecords\GroupMarker.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\SubRecords\PictureOption.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\BinaryFileFormat\SubRecords\SubRecord.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\SpreadSheet\Cell.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\SpreadSheet\CellAnchor.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\SpreadSheet\CellCollection.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\SpreadSheet\CellFormat\CellFormat.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\SpreadSheet\CellFormat\CellFormatType.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\SpreadSheet\CellStyle.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\SpreadSheet\ColumnWidth.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\SpreadSheet\Enums\SheetType.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\SpreadSheet\Image.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\SpreadSheet\Picture.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\SpreadSheet\Row.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\SpreadSheet\Workbook.cs" />
+    <Compile Include="decide\spreadsheet\Office\Excel\SpreadSheet\Worksheet.cs" />
+    <Compile Include="decide\test\TestEvaluateHand.cs" />
+    <Compile Include="decide\test\TestHandEvaluator.cs" />
+    <Compile Include="decide\test\TestRandom.cs" />
+    <Compile Include="decide\test\TestReadSpreadsheet.cs" />
+    <Compile Include="decide\test\TestRulesHash.cs" />
+    <Compile Include="decide\test\TestRulesInterpreter.cs" />
+    <Compile Include="decide\test\TestRulesReader.cs" />
+    <Compile Include="decide\test\TestSeatPositions.cs" />
+    <Compile Include="decide\test\TestSmartEvaluator.cs" />
+    <Compile Include="decide\tools\CardParser.cs" />
+    <Compile Include="identify\analyze\DeltaImageAnalyzer.cs" />
+    <Compile Include="identify\analyze\ImageHoriPartitionIterator.cs" />
+    <Compile Include="identify\analyze\ImageVerticalPartitioner.cs" />
+    <Compile Include="identify\analyze\InvertColorIterator.cs" />
+    <Compile Include="identify\analyze\ScreenImageIteratorFast.cs" />
+    <Compile Include="identify\analyze\ReduceColorIterator.cs" />
+    <Compile Include="identify\analyze\ReplaceColorIterator.cs" />
+    <Compile Include="identify\analyze\ScreenImageIterator.cs" />
+    <Compile Include="identify\analyze\WaitDeltaImageIterator.cs" />
+    <Compile Include="identify\cards\CardIdentifier.cs" />
+    <Compile Include="identify\cards\CardIdentifierIterator.cs" />
+    <Compile Include="identify\cards\CardPattern.cs" />
+    <Compile Include="identify\cards\CardReader.cs" />
+    <Compile Include="identify\cards\CardRegion.cs" />
+    <Compile Include="identify\cards\Cards.cs" />
+    <Compile Include="identify\cards\CardStrategy.cs" />
+    <Compile Include="identify\cards\CardStrategySlow.cs" />
+    <Compile Include="identify\cards\CardStrategyFast.cs" />
+    <Compile Include="identify\chars\CharDecomposer.cs" />
+    <Compile Include="identify\chars\CharIdentifier.cs" />
+    <Compile Include="identify\chars\CharPattern.cs" />
+    <Compile Include="identify\chars\CharReader.cs" />
+    <Compile Include="identify\chars\CropImageIterator.cs" />
+    <Compile Include="identify\chars\DecomposeImageIterator.cs" />
+    <Compile Include="identify\chars\UnknownCharException.cs" />
+    <Compile Include="identify\common\ColorInverter.cs" />
+    <Compile Include="identify\common\ColorPaletteReducer.cs" />
+    <Compile Include="identify\common\ColorReducer.cs" />
+    <Compile Include="identify\common\ColorReducers.cs" />
+    <Compile Include="identify\common\ColorReplacer.cs" />
+    <Compile Include="identify\common\HashImage.cs" />
+    <Compile Include="identify\common\HorizontalPartitioner.cs" />
+    <Compile Include="identify\common\Image.cs" />
+    <Compile Include="identify\common\ImageCropper.cs" />
+    <Compile Include="identify\common\Iterator.cs" />
+    <Compile Include="identify\common\IteratorApply.cs" />
+    <Compile Include="identify\common\IteratorProxy.cs" />
+    <Compile Include="identify\common\ImageLine.cs" />
+    <Compile Include="identify\common\MockIterator.cs" />
+    <Compile Include="identify\common\MockOneImageIterator.cs" />
+    <Compile Include="identify\common\MockWaitImageIterator.cs" />
+    <Compile Include="identify\lobby\LobbyIdentifier.cs" />
+    <Compile Include="identify\lobby\LobbyLayout.cs" />
+    <Compile Include="identify\lobby\LobbyTable.cs" />
+    <Compile Include="identify\player\ButtonIdentifier.cs" />
+    <Compile Include="identify\player\ControlsIdentifier.cs" />
+    <Compile Include="identify\player\SmallCardsIdentifier.cs" />
+    <Compile Include="identify\pocket\PocketIdentifier.cs" />
+    <Compile Include="identify\table\TableIdentifier.cs" />
+    <Compile Include="identify\table\TableLayout.cs" />
+    <Compile Include="identify\test\TestLobbyIdentifier.cs" />
+    <Compile Include="identify\test\TestIdentifyTaskBar.cs" />
+    <Compile Include="identify\test\TestIdentifyTableOpenSeat.cs" />
+    <Compile Include="identify\test\TestIdentifyLobby.cs" />
+    <Compile Include="identify\table\TableLayout9.cs" />
+    <Compile Include="identify\test\TestIdentifyLobbyChars.cs" />
+    <Compile Include="identify\test\TestIdentifyCardsFast.cs" />
+    <Compile Include="identify\test\TestIdentifyControlsChars.cs" />
+    <Compile Include="identify\test\TestAnalyzeCards.cs" />
+    <Compile Include="identify\test\TestAnalyzePlayer.cs" />
+    <Compile Include="identify\test\TestIdentifyBets.cs" />
+    <Compile Include="identify\test\TestIdentifyControls.cs" />
+    <Compile Include="identify\test\TestIdentifyCards.cs" />
+    <Compile Include="identify\test\TestIdentifyHand.cs" />
+    <Compile Include="identify\test\TestIdentifyPlayer.cs" />
+    <Compile Include="identify\test\TestIdentifyTable.cs" />
+    <Compile Include="identify\tools\ImagesRenderer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="identify\tools\PatternLocator.cs" />
+    <Compile Include="identify\tools\RenderImage.cs" />
+    <Compile Include="identify\tools\RunThread.cs" />
+    <Compile Include="model\Card.cs" />
+    <Compile Include="model\ChanceTypes.cs" />
+    <Compile Include="model\PositionTypes.cs" />
+    <Compile Include="model\TableControl.cs" />
+    <Compile Include="model\Decision.cs" />
+    <Compile Include="model\HandTypes.cs" />
+    <Compile Include="model\OpponentActionTypes.cs" />
+    <Compile Include="model\Player.cs" />
+    <Compile Include="model\Rule.cs" />
+    <Compile Include="model\Situation.cs" />
+    <Compile Include="model\StreetTypes.cs" />
+    <Compile Include="model\Table.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="decide\spreadsheet\Office\Excel\readme.txt" />
+    <Content Include="decide\spreadsheet\Office\Excel\Tool\MetaData\EscherRecordTypes.txt" />
+    <Content Include="decide\spreadsheet\Office\Excel\Tool\MetaData\ExcelRecords.xml" />
+    <Content Include="decide\spreadsheet\Office\Excel\Tool\MetaData\Record Identifier.txt" />
+    <EmbeddedResource Include="resources\pattern\sit_out.png" />
+    <EmbeddedResource Include="resources\pattern\check_or_fold.png" />
+    <EmbeddedResource Include="resources\pattern\table_right_bottom_corner.png" />
+    <EmbeddedResource Include="resources\pattern\table_top_left_corner.png" />
+    <EmbeddedResource Include="resources\pattern\lobby_connecting.png" />
+    <EmbeddedResource Include="resources\pattern\taskbar_icon.png" />
+    <EmbeddedResource Include="resources\pattern\check.png" />
+    <EmbeddedResource Include="resources\pattern\uncheck.png" />
+    <EmbeddedResource Include="resources\pattern\table_buy_in.png" />
+    <EmbeddedResource Include="resources\pattern\lobby_login_ok.png" />
+    <EmbeddedResource Include="resources\pattern\lobby_login.png" />
+    <EmbeddedResource Include="resources\pattern\news_close.png" />
+    <EmbeddedResource Include="resources\pattern\post_blind.png" />
+    <EmbeddedResource Include="resources\pattern\im_back.png" />
+    <EmbeddedResource Include="resources\controls\controls_SUp.png" />
+    <EmbeddedResource Include="resources\controls\controls_P.png" />
+    <EmbeddedResource Include="resources\pattern\lobby_pattern_no_login.png" />
+    <EmbeddedResource Include="resources\pattern\blind_pattern.png" />
+    <EmbeddedResource Include="resources\pattern\error.png" />
+    <EmbeddedResource Include="resources\pattern\lobby_pattern.png" />
+    <EmbeddedResource Include="resources\pattern\open_seat.png" />
+    <EmbeddedResource Include="resources\lobby\lobby_point.png" />
+    <EmbeddedResource Include="resources\lobby\lobby_0.png" />
+    <EmbeddedResource Include="resources\lobby\lobby_1.png" />
+    <EmbeddedResource Include="resources\lobby\lobby_2.png" />
+    <EmbeddedResource Include="resources\lobby\lobby_3.png" />
+    <EmbeddedResource Include="resources\lobby\lobby_4.png" />
+    <EmbeddedResource Include="resources\lobby\lobby_5.png" />
+    <EmbeddedResource Include="resources\lobby\lobby_6.png" />
+    <EmbeddedResource Include="resources\lobby\lobby_7.png" />
+    <EmbeddedResource Include="resources\lobby\lobby_8.png" />
+    <EmbeddedResource Include="resources\lobby\lobby_9.png" />
+    <EmbeddedResource Include="resources\lobby\lobby_dollar.png" />
+    <EmbeddedResource Include="resources\lobby\lobby_percent.png" />
+    <EmbeddedResource Include="resources\controls\controls_ll.png" />
+    <EmbeddedResource Include="resources\controls\controls_%24.png" />
+    <EmbeddedResource Include="resources\controls\controls_0.png" />
+    <EmbeddedResource Include="resources\controls\controls_1.png" />
+    <EmbeddedResource Include="resources\controls\controls_2.png" />
+    <EmbeddedResource Include="resources\controls\controls_3.png" />
+    <EmbeddedResource Include="resources\controls\controls_4.png" />
+    <EmbeddedResource Include="resources\controls\controls_5.png" />
+    <EmbeddedResource Include="resources\controls\controls_6.png" />
+    <EmbeddedResource Include="resources\controls\controls_7.png" />
+    <EmbeddedResource Include="resources\controls\controls_8.png" />
+    <EmbeddedResource Include="resources\controls\controls_9.png" />
+    <EmbeddedResource Include="resources\controls\controls_a.png" />
+    <EmbeddedResource Include="resources\controls\controls_B.png" />
+    <EmbeddedResource Include="resources\controls\controls_C.png" />
+    <EmbeddedResource Include="resources\controls\controls_cSmall.png" />
+    <EmbeddedResource Include="resources\controls\controls_d.png" />
+    <EmbeddedResource Include="resources\controls\controls_e.png" />
+    <EmbeddedResource Include="resources\controls\controls_eCheck.png" />
+    <EmbeddedResource Include="resources\controls\controls_F.png" />
+    <EmbeddedResource Include="resources\controls\controls_h.png" />
+    <EmbeddedResource Include="resources\controls\controls_i.png" />
+    <EmbeddedResource Include="resources\controls\controls_k.png" />
+    <EmbeddedResource Include="resources\controls\controls_l.png" />
+    <EmbeddedResource Include="resources\controls\controls_o.png" />
+    <EmbeddedResource Include="resources\controls\controls_point.png" />
+    <EmbeddedResource Include="resources\controls\controls_R.png" />
+    <EmbeddedResource Include="resources\controls\controls_s.png" />
+    <EmbeddedResource Include="resources\controls\controls_T.png" />
+    <EmbeddedResource Include="resources\controls\controls_tSmall.png" />
+    <EmbeddedResource Include="resources\pot\pot_0.png" />
+    <EmbeddedResource Include="resources\pot\pot_2.png" />
+    <EmbeddedResource Include="resources\pot\pot_3.png" />
+    <EmbeddedResource Include="resources\pot\pot_4.png" />
+    <EmbeddedResource Include="resources\pot\pot_5.png" />
+    <EmbeddedResource Include="resources\pot\pot_6.png" />
+    <EmbeddedResource Include="resources\pot\pot_7.png" />
+    <EmbeddedResource Include="resources\pot\pot_9.png" />
+    <EmbeddedResource Include="resources\pot\pot_point.png" />
+    <EmbeddedResource Include="resources\pot\pot_%24.png" />
+    <EmbeddedResource Include="resources\pot\pot_1.png" />
+    <EmbeddedResource Include="resources\pot\pot_8.png" />
+    <EmbeddedResource Include="resources\bets\bet_%24.png" />
+    <EmbeddedResource Include="resources\bets\bet_0.png" />
+    <EmbeddedResource Include="resources\bets\bet_1.png" />
+    <EmbeddedResource Include="resources\bets\bet_2.png" />
+    <EmbeddedResource Include="resources\bets\bet_4.png" />
+    <EmbeddedResource Include="resources\bets\bet_5.png" />
+    <EmbeddedResource Include="resources\bets\bet_6.png" />
+    <EmbeddedResource Include="resources\bets\bet_point.png" />
+    <EmbeddedResource Include="resources\cards\card_C10.png" />
+    <EmbeddedResource Include="resources\cards\card_C2.png" />
+    <EmbeddedResource Include="resources\cards\card_C3.png" />
+    <EmbeddedResource Include="resources\cards\card_C4.png" />
+    <EmbeddedResource Include="resources\cards\card_C5.png" />
+    <EmbeddedResource Include="resources\cards\card_C6.png" />
+    <EmbeddedResource Include="resources\cards\card_C7.png" />
+    <EmbeddedResource Include="resources\cards\card_C8.png" />
+    <EmbeddedResource Include="resources\cards\card_C9.png" />
+    <EmbeddedResource Include="resources\cards\card_CA.png" />
+    <EmbeddedResource Include="resources\cards\card_CJ.png" />
+    <EmbeddedResource Include="resources\cards\card_CK.png" />
+    <EmbeddedResource Include="resources\cards\card_CQ.png" />
+    <EmbeddedResource Include="resources\cards\card_D10.png" />
+    <EmbeddedResource Include="resources\cards\card_D2.png" />
+    <EmbeddedResource Include="resources\cards\card_D3.png" />
+    <EmbeddedResource Include="resources\cards\card_D4.png" />
+    <EmbeddedResource Include="resources\cards\card_D5.png" />
+    <EmbeddedResource Include="resources\cards\card_D6.png" />
+    <EmbeddedResource Include="resources\cards\card_D7.png" />
+    <EmbeddedResource Include="resources\cards\card_D8.png" />
+    <EmbeddedResource Include="resources\cards\card_D9.png" />
+    <EmbeddedResource Include="resources\cards\card_DA.png" />
+    <EmbeddedResource Include="resources\cards\card_DJ.png" />
+    <EmbeddedResource Include="resources\cards\card_DK.png" />
+    <EmbeddedResource Include="resources\cards\card_DQ.png" />
+    <EmbeddedResource Include="resources\cards\card_H10.png" />
+    <EmbeddedResource Include="resources\cards\card_H2.png" />
+    <EmbeddedResource Include="resources\cards\card_H3.png" />
+    <EmbeddedResource Include="resources\cards\card_H4.png" />
+    <EmbeddedResource Include="resources\cards\card_H5.png" />
+    <EmbeddedResource Include="resources\cards\card_H6.png" />
+    <EmbeddedResource Include="resources\cards\card_H7.png" />
+    <EmbeddedResource Include="resources\cards\card_H8.png" />
+    <EmbeddedResource Include="resources\cards\card_H9.png" />
+    <EmbeddedResource Include="resources\cards\card_HA.png" />
+    <EmbeddedResource Include="resources\cards\card_HJ.png" />
+    <EmbeddedResource Include="resources\cards\card_HK.png" />
+    <EmbeddedResource Include="resources\cards\card_HQ.png" />
+    <EmbeddedResource Include="resources\cards\card_S10.png" />
+    <EmbeddedResource Include="resources\cards\card_S2.png" />
+    <EmbeddedResource Include="resources\cards\card_S3.png" />
+    <EmbeddedResource Include="resources\cards\card_S4.png" />
+    <EmbeddedResource Include="resources\cards\card_S5.png" />
+    <EmbeddedResource Include="resources\cards\card_S6.png" />
+    <EmbeddedResource Include="resources\cards\card_S7.png" />
+    <EmbeddedResource Include="resources\cards\card_S8.png" />
+    <EmbeddedResource Include="resources\cards\card_S9.png" />
+    <EmbeddedResource Include="resources\cards\card_SA.png" />
+    <EmbeddedResource Include="resources\cards\card_SJ.png" />
+    <EmbeddedResource Include="resources\cards\card_SK.png" />
+    <EmbeddedResource Include="resources\cards\card_SQ.png" />
+    <EmbeddedResource Include="resources\player\player_%24.png" />
+    <EmbeddedResource Include="resources\player\player_0.png" />
+    <EmbeddedResource Include="resources\player\player_1.png" />
+    <EmbeddedResource Include="resources\player\player_2.png" />
+    <EmbeddedResource Include="resources\player\player_3.png" />
+    <EmbeddedResource Include="resources\player\player_4.png" />
+    <EmbeddedResource Include="resources\player\player_5.png" />
+    <EmbeddedResource Include="resources\player\player_6.png" />
+    <EmbeddedResource Include="resources\player\player_7.png" />
+    <EmbeddedResource Include="resources\player\player_8.png" />
+    <EmbeddedResource Include="resources\player\player_9.png" />
+    <EmbeddedResource Include="resources\player\player_a.png" />
+    <EmbeddedResource Include="resources\player\player_b.png" />
+    <EmbeddedResource Include="resources\player\player_c.png" />
+    <EmbeddedResource Include="resources\player\player_d.png" />
+    <EmbeddedResource Include="resources\player\player_e.png" />
+    <EmbeddedResource Include="resources\player\player_g.png" />
+    <EmbeddedResource Include="resources\player\player_h.png" />
+    <EmbeddedResource Include="resources\player\player_i.png" />
+    <EmbeddedResource Include="resources\player\player_k.png" />
+    <EmbeddedResource Include="resources\player\player_l.png" />
+    <EmbeddedResource Include="resources\player\player_m.png" />
+    <EmbeddedResource Include="resources\player\player_n.png" />
+    <EmbeddedResource Include="resources\player\player_o.png" />
+    <EmbeddedResource Include="resources\player\player_p.png" />
+    <EmbeddedResource Include="resources\player\player_point.png" />
+    <EmbeddedResource Include="resources\player\player_q.png" />
+    <EmbeddedResource Include="resources\player\player_r.png" />
+    <EmbeddedResource Include="resources\player\player_s.png" />
+    <EmbeddedResource Include="resources\player\player_t.png" />
+    <EmbeddedResource Include="resources\player\player_u.png" />
+    <EmbeddedResource Include="resources\player\player_up_B.png" />
+    <EmbeddedResource Include="resources\player\player_up_E.png" />
+    <EmbeddedResource Include="resources\player\player_up_H.png" />
+    <EmbeddedResource Include="resources\player\player_up_J.png" />
+    <EmbeddedResource Include="resources\player\player_up_L.png" />
+    <EmbeddedResource Include="resources\player\player_up_P.png" />
+    <EmbeddedResource Include="resources\player\player_up_R.png" />
+    <EmbeddedResource Include="resources\player\player_up_S.png" />
+    <EmbeddedResource Include="resources\player\player_up_T.png" />
+    <EmbeddedResource Include="resources\player\player_v.png" />
+    <EmbeddedResource Include="resources\player\player_w.png" />
+    <EmbeddedResource Include="resources\player\player_y.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\config">
+    </None>
+    <EmbeddedResource Include="app\gui\BotForm.resx">
+      <DependentUpon>BotForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\mapping.config" />
+    <None Include="resources\rules\rules.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VirtualBox">
+      <Guid>{46137EEC-703B-4FE5-AFD4-7C9BBBBA0259}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <Private>True</Private>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
